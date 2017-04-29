@@ -1,0 +1,23 @@
+{
+  "name": "newtemplate",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Anton <raisky34@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.8",
+    "angularfire": "^2.0.2",
+    "firebase": "^3.4.0"
+  }
+}

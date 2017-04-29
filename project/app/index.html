@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- build:css css/vendor.min.css -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <!-- endbuild -->
+
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+
+</head>
+<body>
+    
+
+    <section class="chat-page">
+      <div class="chat-window" ng-controller="ChatCtrl as chatCtrl">
+          <div class="chat-header">
+              <div class="chat-header__author" ng-if="chatCtrl.author">{{chatCtrl.author.displayName}}</div>
+              <div class="chat-header__btns">
+                  <button ng-click="chatCtrl.login()" ng-if="!chatCtrl.author" class="btn btn-green">Login</button>
+                  <button ng-click="chatCtrl.logout()" ng-if="chatCtrl.author" class="btn btn-red">Logout</button>
+              </div>
+          </div>
+
+          <div class="chat-body">
+              <ul class="messages">
+                  <li class="message" ng-class="{ 'message--mine': m.authorId == chatCtrl.author.uid }" ng-repeat="m in chatCtrl.messagesToShow">
+                      <img class="message__author-img" ng-src="{{m.authorImg}}" alt="">
+                      <span class="message__author">{{m.author}}</span>
+                      <div class="message__text">
+                          {{m.message}}
+                      </div>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="chat-footer">
+              <div class="chat-footer__message">
+                  <textarea  enter-clicker="chatCtrl.addMessage()" ng-model="chatCtrl.newMessage" ></textarea>
+                  <button class="send-btn" ng-click="chatCtrl.addMessage()" type="submit">
+                      <img src="../../img/send.svg" alt="">
+                  </button>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+
+    <!-- build:js js/vendor.min.js -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/firebase/firebase.js"></script>
+    <script src="libs/angularfire/dist/angularfire.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js js/main.min.js -->
+    <script src="js/app.js"></script>
+
+    <script src="js/chat/chat.service.js"></script>
+    <script src="js/chat/chat.controller.js"></script>
+
+    <script src="js/enter-sender.directive.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
