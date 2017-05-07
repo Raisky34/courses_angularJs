@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="marakuyaApp">
 <head>
     <meta charset="UTF-8">
     <title>Chat App</title>
@@ -13,27 +13,26 @@
     <!-- endbuild -->
 
 </head>
-<body ng-app="marakuyaApp">
-    <div class="header">
-        <nav className="navbar navbar-default" role="navigation">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span className="sr-only">Toggle navigation</span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
+<body>
+    <div class="main">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#">Marakya</a>
+                    <a class="navbar-brand" href="#">Marakya</a>
                 </div>
-
-                <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul className="nav navbar-nav">
-                        <li><a href="#main">О нас</a></li>
-                        <li><a href="#tranings">Направления</a></li>
-                        <li><a href="#sheduler">Расписание</a></li>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#!/main">О нас</a></li>
+                        <li><a href="#!/tranings">Направления</a></li>
+                        <li><a href="#!/sheduler">About</a></li>
                     </ul>
-                    <ul className="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="tel:+375(29)126-49-79">Телефон:+375(29)126-49-79</a></li>
                     </ul>
                 </div>

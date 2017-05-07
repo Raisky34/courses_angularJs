@@ -1,6 +1,6 @@
 var app = angular.module('marakuyaApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
     .when("/main", {
         templateUrl : "views/main.html"
@@ -14,5 +14,5 @@ app.config(function($routeProvider) {
     .otherwise({
         redirectTo: '/main'
     });
-});
+}]);
 
