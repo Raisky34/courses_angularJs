@@ -1,0 +1,37 @@
+.main {
+  font-size: 16px;
+}
+.main .direction .title {
+  font-size: 26px;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+.main .direction .itemsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.main .direction .itemsContainer .itemContainer {
+  display: flex;
+  padding: 5px 10px;
+  width: 250px;
+  height: 180px;
+  margin: 20px 20px 0px 20px;
+  border: 1px solid black;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.main .direction .itemsContainer .itemContainer .itemTitle {
+  font-size: 23px;
+  margin: 5px 0 0 15px;
+}
+
+.main .direction .itemsContainer .itemContainer .itemText {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
