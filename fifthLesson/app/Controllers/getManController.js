@@ -8,9 +8,7 @@ app.controller("getManController", function($scope, peopleFactory) {
     $scope.mansArray = [];
 
     $scope.generateMans = function(count) {
-        var q = peopleFactory.getPeopleExport(manNames, manSurnames, count);
-        console.log(q);
-        $scope.mansArray = q;
+        $scope.mansArray = peopleFactory.getPeopleExport(manNames, manSurnames, count);
 
     }
 });
