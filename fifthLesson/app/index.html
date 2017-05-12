@@ -12,47 +12,38 @@
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
-    <!--<div ng-controller="getManController">-->
-      <!--<div>-->
-        <!--<input ng-model="count">-->
-        <!--<button ng-click="generateMans(count)"> Result Mans! </button>-->
-        <!--<div ng-repeat="man in mansArray">-->
-          <!--{{man.name}}-->
-          <!--{{man.surname}}-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div ng-controller="getWomanController">-->
-      <!--<div>-->
-        <!--<input ng-model="count">-->
-        <!--<button ng-click="generateWomans(count)"> Result Womens! </button>-->
-        <!--<div ng-repeat="weman in womanArray">-->
-          <!--{{weman.name}}-->
-          <!--{{weman.surname}}-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <div ng-controller="calculateController">
-      <input type="text" ng-model="inputString">
-      {{result}}
+    <div ng-controller="calculateController" class="calculate">
+      <input type="text" ng-model="inputString" disabled>
       <div>
-        <button ng-click="inputZero('0')">0</button>
-        <button ng-click="inputOne('1')">1</button>
-        <button ng-click="inputTwo('2')">2</button>
-        <button ng-click="inputThree('3')">3</button>
-        <button ng-click="inputFour('4')">4</button>
-        <button ng-click="inputFive('5')">5</button>
-        <button ng-click="inputSix('6')">6</button>
-        <button ng-click="inputSeven('7')">7</button>
-        <button ng-click="inputEight('8')">8</button>
-        <button ng-click="inputNine('9')">9</button>
+        {{result}}
       </div>
       <div>
-        <button ng-click="inputPlus('+')">+</button>
-        <button ng-click="inputMinus('-')">-</button>
-        <button ng-click="inputDelete('/')">/</button>
-        <button ng-click="inputMult('*')">*</button>
+        <button ng-click="inputNumber('1')" class="mybutton">1</button>
+        <button ng-click="inputNumber('2')" class="mybutton">2</button>
+        <button ng-click="inputNumber('3')" class="mybutton">3</button>
+        <button ng-click="reset()" class="mybutton">C</button>
+        <button ng-click="inputNumber('(')" class="mybutton">(</button>
+      </div>
+      <div>
+        <button ng-click="inputNumber('4')" class="mybutton">4</button>
+        <button ng-click="inputNumber('5')" class="mybutton">5</button>
+        <button ng-click="inputNumber('6')" class="mybutton">6</button>
+        <button ng-click="inputVariable('-')" class="mybutton">-</button>
+        <button ng-click="inputNumber(')')" class="mybutton">)</button>
+      </div>
+      <div>
+        <button ng-click="inputNumber('7')" class="mybutton">7</button>
+        <button ng-click="inputNumber('8')" class="mybutton">8</button>
+        <button ng-click="inputNumber('9')" class="mybutton">9</button>
+        <button ng-click="inputVariable('/')" class="mybutton">/</button>
+        <button ng-click="inputVariable('%')" class="mybutton">%</button>
+      </div>
+      <div>
+        <button ng-click="inputNumber('0')" class="mybutton">0</button>
+        <button ng-click="inputNumber('.')" class="mybutton">.</button>
+        <button ng-click="inputVariable('+')" class="mybutton">+</button>
+        <button ng-click="inputVariable('*')" class="mybutton">*</button>
+        <button class="mybutton" disabled> </button>
       </div>
     </div>
 

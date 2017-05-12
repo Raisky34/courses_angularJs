@@ -81,7 +81,7 @@ app.factory("calculateFactory", function(){
 
     var splitUpOperand = function(str) {
         str = str.replace(/\s/g, "");
-        var vArr = str.split(/(^-\w)|(\()+(-\w)|([-\*\+/\(\)\^])/);
+        var vArr = str.split(/(^-\w)|(\()+(-\w)|([-\*\+/\(\)\^\%])/);
         var result = new Array();
         for (i in vArr) {
             if (vArr[i] != "" && typeof vArr[i] != "undefined") {
@@ -93,9 +93,9 @@ app.factory("calculateFactory", function(){
 
     function reversePolishNotation(str) {
         str = splitUpOperand(str);
-        var regexOperations = new RegExp(/[-\*\+/\(\)\^]/);
+        var regexOperations = new RegExp(/[-\*\+/\(\)\^\%]/);
         var regexOperands = new RegExp(/\w/);
-        var priority = {'(' : 0, ')' : 1, '+' : 2, '-' : 2, '*' : 3, '/' : 3, '^': 4};
+        var priority = {'(' : 0, ')' : 1, '+' : 2, '-' : 2, '*' : 3, '/' : 3, '%': 4, '^': 4};
         var stack = new Array();
         var result = new Array();
 
@@ -128,9 +128,61 @@ app.factory("calculateFactory", function(){
             result.push(stack.pop());
         }
         return result;
+    };
+
+
+    function calculate (string) {
+        function plus(x, y) {
+            return x + y;
+        }
+        function minus(x, y) {
+            return x - y;
+        }
+        function devide(x, y) {
+            return x / y;
+        }
+        function multiply(x, y) {
+            return x * y;
+        }
+        function ost(x, y) {
+            return x % y;
+        }
+
+        var stack = [];
+
+        var reverseString = reversePolishNotation(string);
+
+        reverseString.forEach(function(token) {
+            var y, x;
+            if (token == '+') {
+                y = stack.pop();
+                x = stack.pop();
+                stack.push(plus(x, y));
+            } else if (token == '-') {
+                y = stack.pop();
+                x = stack.pop();
+                stack.push(minus(x, y));
+            } else if (token == '*') {
+                y = stack.pop();
+                x = stack.pop();
+                stack.push(multiply(x, y));
+            } else if (token == '/') {
+                y = stack.pop();
+                x = stack.pop();
+                stack.push(devide(x, y));
+            } else if (token == '%') {
+                y = stack.pop();
+                x = stack.pop();
+                stack.push(ost(x, y));
+            } else {
+                stack.push(parseFloat(token));
+            }
+        });
+
+        return stack.pop();
     }
 
     return {
-        reversePolishNotationExport: reversePolishNotation
+        calculateExport: calculate
     };
 });
