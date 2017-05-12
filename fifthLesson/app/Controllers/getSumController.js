@@ -6,7 +6,7 @@ app.controller("getSumController", function ($scope, dataFactory, testService, t
     $scope.result = 0;
 
     $scope.func = function(){
-        $scope.result = dataFactory.getSumExport($scope.test)
+        $scope.result = dataFactory.getSumExport($scope.test);
     };
 
     $scope.myService = testService;
